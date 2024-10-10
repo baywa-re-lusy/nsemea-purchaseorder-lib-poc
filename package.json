@@ -1,0 +1,12 @@
+{
+  "name": "nsemea-purchaseorder-lib-poc",
+  "version": "1.0.0",
+  "description": "NSEMEA purchase order library",
+  "main": "none",
+  "author": "Dario Da Silva",
+  "license": "MIT",
+  "devDependencies": {
+    "@hitc/netsuite-types": "^2024.2.4",
+    "typescript": "^5.6.3"
+  }
+}
