@@ -9,6 +9,9 @@ export class PurchaseOrder extends PurchaseOrderBase {
   subsidiaryText: string
 
   @FieldType.freeformtext
+  custbody_delivapptref: string
+
+  @FieldType.freeformtext
   custbody_pofollowupnote: string
 
   @FieldType.select
