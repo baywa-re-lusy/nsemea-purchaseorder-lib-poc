@@ -2,137 +2,137 @@
  * NetSuite purchase order record
  */
 import * as record from 'N/record'
-import { TransactionBase } from '../Core/DataAccess/Transaction'
-import { Sublist, SublistFieldType, SublistLine } from '../Core/DataAccess/Sublist'
-import { FieldType, Nullable } from '../Core/DataAccess/Record'
-import { AddressBase } from '../Core/DataAccess/AddressBase'
+import { TransactionBase } from '../Core/DataAccess/TransactionBase'
+import { AutoGetSet, Nullable } from "../Core/DataAccess/NSTypedRecord";
+// import { Sublist, SublistFieldType, SublistLine } from '../Core/DataAccess/Sublist'
+// import { AddressBase } from '../Core/DataAccess/AddressBase'
 
 /**
  * Sublist 'item' on purchase orders
  */
-export class ItemSublist extends SublistLine {
-
-  @SublistFieldType.decimalnumber
-  amount: number
-
-  @SublistFieldType.select
-  class: number
-
-  @SublistFieldType.select
-  customer: number
-
-  @SublistFieldType.checkbox
-  deferrevrec: boolean
-
-  @SublistFieldType.select
-  department: number
-
-  @SublistFieldType.textarea
-  description: string
-
-  @SublistFieldType.date
-  expectedreceiptdate: Date
-
-  @SublistFieldType.checkbox
-  isclosed: boolean
-
-  @SublistFieldType.select
-  item: number
-
-  @SublistFieldType.select
-  location: Nullable<number>
-
-  @SublistFieldType.integernumber
-  leadtime: Nullable<number>
-
-  @SublistFieldType.float
-  quantity: number
-
-  @SublistFieldType.float
-  quantityreceived: number
-
-  @SublistFieldType.float
-  quantitybilled: number
-
-  @SublistFieldType.decimalnumber
-  rate: number
-
-  @SublistFieldType.select
-  units: number
-
-  // This is documented as `text` in the records browser
-  // but shows up as what appears to be vendor internal id on records.
-  @SublistFieldType.freeformtext
-  vendorname: string | number
-}
+// export class ItemSublist extends SublistLine {
+//
+//   @SublistFieldType.decimalnumber
+//   amount: number
+//
+//   @SublistFieldType.select
+//   class: number
+//
+//   @SublistFieldType.select
+//   customer: number
+//
+//   @SublistFieldType.checkbox
+//   deferrevrec: boolean
+//
+//   @SublistFieldType.select
+//   department: number
+//
+//   @SublistFieldType.textarea
+//   description: string
+//
+//   @SublistFieldType.date
+//   expectedreceiptdate: Date
+//
+//   @SublistFieldType.checkbox
+//   isclosed: boolean
+//
+//   @SublistFieldType.select
+//   item: number
+//
+//   @SublistFieldType.select
+//   location: Nullable<number>
+//
+//   @SublistFieldType.integernumber
+//   leadtime: Nullable<number>
+//
+//   @SublistFieldType.float
+//   quantity: number
+//
+//   @SublistFieldType.float
+//   quantityreceived: number
+//
+//   @SublistFieldType.float
+//   quantitybilled: number
+//
+//   @SublistFieldType.decimalnumber
+//   rate: number
+//
+//   @SublistFieldType.select
+//   units: number
+//
+//   // This is documented as `text` in the records browser
+//   // but shows up as what appears to be vendor internal id on records.
+//   @SublistFieldType.freeformtext
+//   vendorname: string | number
+// }
 
 /**
  * NetSuite purchase order record
  */
 export class PurchaseOrderBase extends TransactionBase {
 
-  @FieldType.select
-  approvalstatus: number
+  @AutoGetSet()
+  accessor approvalstatus: number
 
-  @FieldType.currency
-  balance: Nullable<number>
+  @AutoGetSet()
+  accessor balance: Nullable<number>
 
-  @FieldType.select
-  class: Nullable<number>
+  @AutoGetSet()
+  accessor class: Nullable<number>
 
-  @FieldType.select
-  createdfrom: Nullable<number>
+  @AutoGetSet()
+  accessor createdfrom: Nullable<number>
 
-  @FieldType.select
-  currency: number
+  @AutoGetSet()
+  accessor currency: number
 
-  @FieldType.select
-  employee: Nullable<number>
+  @AutoGetSet()
+  accessor employee: Nullable<number>
 
-  @FieldType.select
-  incoterm: Nullable<number>
+  @AutoGetSet()
+  accessor incoterm: Nullable<number>
 
-  @FieldType.select
-  intercotransaction: Nullable<number>
+  @AutoGetSet()
+  accessor intercotransaction: Nullable<number>
 
-  @FieldType.checkbox
-  isbasecurrency: boolean
+  @AutoGetSet()
+  accessor isbasecurrency: boolean
 
-  @FieldType.date
-  shipdate: Date
+  @AutoGetSet()
+  accessor shipdate: Date
 
-  @FieldType.select
-  shipmethod: Nullable<number>
+  @AutoGetSet()
+  accessor shipmethod: Nullable<number>
 
-  @FieldType.select
-  shipto: Nullable<number>
+  @AutoGetSet()
+  accessor shipto: Nullable<number>
 
-  @FieldType.subrecord(AddressBase)
-  billingaddress: AddressBase
+  // @FieldType.subrecord(AddressBase)
+  // billingaddress: AddressBase
 
-  @FieldType.subrecord(AddressBase)
-  shippingaddress: AddressBase
+  // @FieldType.subrecord(AddressBase)
+  // shippingaddress: AddressBase
 
-  @FieldType.select
-  terms: Nullable<number>
+  @AutoGetSet()
+  accessor terms: Nullable<number>
 
-  @FieldType.checkbox
-  tobeemailed: Nullable<boolean>
+  @AutoGetSet()
+  accessor tobeemailed: Nullable<boolean>
 
-  @FieldType.checkbox
-  tobefaxed: Nullable<boolean>
+  @AutoGetSet()
+  accessor tobefaxed: Nullable<boolean>
 
-  @FieldType.checkbox
-  tobeprinted: Nullable<boolean>
+  @AutoGetSet()
+  accessor tobeprinted: Nullable<boolean>
 
-  @FieldType.currency
-  total: number
+  @AutoGetSet()
+  accessor total: number
 
-  @FieldType.currency
-  unbilledorders: Nullable<number>
+  @AutoGetSet()
+  accessor unbilledorders: Nullable<number>
 
-  @FieldType.sublist(ItemSublist)
-  item: Sublist<ItemSublist>
+  //@FieldType.sublist(ItemSublist)
+  //item: Sublist<ItemSublist>
 
-  static recordType () { return record.Type.PURCHASE_ORDER }
+  override recordType () { return record.Type.PURCHASE_ORDER }
 }

@@ -13,7 +13,8 @@
     "declaration": true,
     //"allowSyntheticDefaultImports": true
     //"emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    //"experimentalDecorators": true,
+    "noImplicitOverride": true,
     "downlevelIteration": false,
     "baseUrl": ".",
     "lib":["ES2019"],
