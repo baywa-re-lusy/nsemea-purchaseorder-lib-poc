@@ -7,8 +7,8 @@ import {AutoGetSet} from "../Core/DataAccess/NSTypedRecord";
 
 export class PurchaseOrder extends PurchaseOrderBase {
 
-  // @AutoGetSet({ fieldId: "subsidiary", asText: true })
-  // accessor subsidiaryName: string
+  @AutoGetSet({ fieldId: "subsidiary", asText: true })
+  accessor subsidiaryName: string
 
   @AutoGetSet()
   accessor custbody_potype: string
