@@ -5,4 +5,4 @@ dist
 node_modules
 **/.DS_Store
 src/Core
-src/Typescript/Core
+src/Typescripts/Core

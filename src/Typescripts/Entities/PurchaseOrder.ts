@@ -1,6 +1,6 @@
-import { PurchaseOrderBase} from "../Core/Transactions/PurchaseOrderBase";
-import { FieldType } from '../Core/Base/Record';
-import { Sublist } from '../Core/Base/Sublist';
+import { PurchaseOrderBase} from "./PurchaseOrderBase";
+import { FieldType } from '../Core/DataAccess/Record';
+import { Sublist } from '../Core/DataAccess/Sublist';
 import {PurchaseOrderItemSublist} from "./PurchaseOrderItemSublist";
 
 export class PurchaseOrder extends PurchaseOrderBase {

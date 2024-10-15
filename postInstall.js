@@ -2,15 +2,15 @@ const fsExtra = require('fs-extra');
 const fs = require('fs');
 const path = require('path');
 
-let source = path.join(process.cwd(),"src/Typescript/Entities");
-let destination = '../../src/Typescript/Entities';
+let source = path.join(process.cwd(),"src/Typescripts/Entities");
+let destination = '../../src/Typescripts/Entities';
 console.log(`copying NSEMEA purchase library from ${source} to ${destination}`);
 fsExtra.copy(source,destination,{ preserveTimestamps:true}, err => {
   console.error(err);
 });
 
-source = path.join(process.cwd(),"src/Typescript/Services");
-destination = '../../src/Typescript/Services';
+source = path.join(process.cwd(),"src/Typescripts/Services");
+destination = '../../src/Typescripts/Services';
 console.log(`copying NSEMEA purchase library from ${source} to ${destination}`);
 fsExtra.copy(source,destination,{ preserveTimestamps:true}, err => {
   console.error(err);
@@ -18,7 +18,7 @@ fsExtra.copy(source,destination,{ preserveTimestamps:true}, err => {
 
 console.log(`path : ${__dirname}`);
 const gitignorePath = path.resolve(__dirname, '../../.gitignore');
-const entriesToAdd = ['src/Typescript/Entities', 'src/Typescript/Services'];
+const entriesToAdd = ['src/Typescripts/Entities', 'src/Typescripts/Services'];
 
 console.log(`gitignorePath ${gitignorePath}`);
 

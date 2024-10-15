@@ -2,10 +2,10 @@
  * NetSuite purchase order record
  */
 import * as record from 'N/record'
-import { TransactionBase } from '../Base/Transaction'
-import { Sublist, SublistFieldType, SublistLine } from '../Base/Sublist'
-import { FieldType, Nullable } from '../Base/Record'
-import { AddressBase } from '../Base/AddressBase'
+import { TransactionBase } from '../Core/DataAccess/Transaction'
+import { Sublist, SublistFieldType, SublistLine } from '../Core/DataAccess/Sublist'
+import { FieldType, Nullable } from '../Core/DataAccess/Record'
+import { AddressBase } from '../Core/DataAccess/AddressBase'
 
 /**
  * Sublist 'item' on purchase orders

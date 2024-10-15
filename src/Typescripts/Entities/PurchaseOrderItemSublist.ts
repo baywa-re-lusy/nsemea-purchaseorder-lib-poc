@@ -1,5 +1,5 @@
-import { ItemSublist } from "../Core/Transactions/PurchaseOrderBase";
-import { SublistFieldType } from "../Core/Base/Sublist";
+import { ItemSublist } from "./PurchaseOrderBase";
+import { SublistFieldType } from "../Core/DataAccess/Sublist";
 
 export class PurchaseOrderItemSublist extends ItemSublist {
 
