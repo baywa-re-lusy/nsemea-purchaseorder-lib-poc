@@ -3,7 +3,7 @@
  */
 import * as record from 'N/record'
 import { TransactionBase } from '../Core/DataAccess/TransactionBase'
-import {AutoGetSet, Nullable, SubRecordDecorator} from "../Core/DataAccess/NSTypedRecord";
+import {FieldTypeDecorator, Nullable, SubRecordDecorator} from "../Core/DataAccess/NSTypedRecord";
 import {AddressBase} from "../Core/DataAccess/AddressBase";
 // import { Sublist, SublistFieldType, SublistLine } from '../Core/DataAccess/Sublist'
 // import { AddressBase } from '../Core/DataAccess/AddressBase'
@@ -72,40 +72,40 @@ import {AddressBase} from "../Core/DataAccess/AddressBase";
  */
 export class PurchaseOrderBase extends TransactionBase {
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor approvalstatus: number
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor balance: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor class: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor createdfrom: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor currency: number
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor employee: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor incoterm: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor intercotransaction: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor isbasecurrency: boolean
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor shipdate: Date
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor shipmethod: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor shipto: Nullable<number>
 
   @SubRecordDecorator(AddressBase)
@@ -114,22 +114,22 @@ export class PurchaseOrderBase extends TransactionBase {
   // @FieldType.subrecord(AddressBase)
   // shippingaddress: AddressBase
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor terms: Nullable<number>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor tobeemailed: Nullable<boolean>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor tobefaxed: Nullable<boolean>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor tobeprinted: Nullable<boolean>
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor total: number
 
-  @AutoGetSet()
+  @FieldTypeDecorator()
   accessor unbilledorders: Nullable<number>
 
   //@FieldType.sublist(ItemSublist)
