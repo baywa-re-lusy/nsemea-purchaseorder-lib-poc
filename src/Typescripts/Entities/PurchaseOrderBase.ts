@@ -3,7 +3,7 @@
  */
 import * as record from 'N/record'
 import { TransactionBase } from '../Core/DataAccess/TransactionBase'
-import { AutoGetSet, Nullable } from "../Core/DataAccess/NSTypedRecord";
+import {AutoGetSet, Nullable, SubRecordDecorator} from "../Core/DataAccess/NSTypedRecord";
 import {AddressBase} from "../Core/DataAccess/AddressBase";
 // import { Sublist, SublistFieldType, SublistLine } from '../Core/DataAccess/Sublist'
 // import { AddressBase } from '../Core/DataAccess/AddressBase'
@@ -108,8 +108,8 @@ export class PurchaseOrderBase extends TransactionBase {
   @AutoGetSet()
   accessor shipto: Nullable<number>
 
-  // @AutoGetSet()
-  // billingaddress: AddressBase
+  @SubRecordDecorator(AddressBase)
+  accessor billingaddress: AddressBase
 
   // @FieldType.subrecord(AddressBase)
   // shippingaddress: AddressBase
