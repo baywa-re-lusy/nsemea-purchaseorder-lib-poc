@@ -108,8 +108,8 @@ export class PurchaseOrderBase extends TransactionBase {
   @AutoGetSet()
   accessor shipto: Nullable<number>
 
-  @AutoGetSet()
-  billingaddress: AddressBase
+  // @AutoGetSet()
+  // billingaddress: AddressBase
 
   // @FieldType.subrecord(AddressBase)
   // shippingaddress: AddressBase
