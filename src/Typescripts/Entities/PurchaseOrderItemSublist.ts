@@ -6,7 +6,7 @@ export class PurchaseOrderItemSublist extends ItemSublist {
   @SubListFieldTypeDecorator()
   accessor custcol_postatus: number
 
-  @SubListFieldTypeDecorator({asText: true})
+  @SubListFieldTypeDecorator({fieldId: 'custcol_postatus', asText: true})
   accessor custcol_postatusName: string
 
   // @SubListFieldTypeDecorator()
