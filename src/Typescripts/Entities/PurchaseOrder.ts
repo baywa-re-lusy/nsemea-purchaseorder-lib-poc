@@ -1,5 +1,5 @@
-import { PurchaseOrderBase } from "./PurchaseOrderBase";
-import {FieldTypeDecorator} from "../Core/DataAccess/NSTypedRecord";
+import {ItemSublist, PurchaseOrderBase} from "./PurchaseOrderBase";
+import {FieldTypeDecorator, SubListDecorator} from "../Core/DataAccess/NSTypedRecord";
 
 import { NSSubList } from '../Core/DataAccess/NSSubList';
 import {PurchaseOrderItemSublist} from "./PurchaseOrderItemSublist";
@@ -33,8 +33,7 @@ export class PurchaseOrder extends PurchaseOrderBase {
   @FieldTypeDecorator({ fieldId: "custbody_related_project", asText: true })
   accessor custbody_related_projectName: string
 
-  // @FieldType.sublist(PurchaseOrderItemSublist)
-  //   // define a strongly typed item sublist
-  override item: NSSubList<PurchaseOrderItemSublist>;
+  @SubListDecorator(PurchaseOrderItemSublist)
+  override accessor item: NSSubList<PurchaseOrderItemSublist>;
 
 }

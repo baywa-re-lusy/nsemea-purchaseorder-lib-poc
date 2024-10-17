@@ -3,7 +3,7 @@
  */
 import * as record from 'N/record'
 import { TransactionBase } from '../Core/DataAccess/TransactionBase'
-import {FieldTypeDecorator, Nullable, SubRecordDecorator} from "../Core/DataAccess/NSTypedRecord";
+import {FieldTypeDecorator, Nullable, SubListDecorator, SubRecordDecorator} from "../Core/DataAccess/NSTypedRecord";
 import { NSSubList, SubListFieldTypeDecorator} from '../Core/DataAccess/NSSubList'
 import { AddressBase } from '../Core/DataAccess/AddressBase'
 import {NSSubListLine} from "../Core/DataAccess/NSSubListLine";
@@ -132,8 +132,8 @@ export class PurchaseOrderBase extends TransactionBase {
   @FieldTypeDecorator()
   accessor unbilledorders: Nullable<number>
 
-  //@FieldType.sublist(ItemSublist)
-  item: NSSubList<ItemSublist>
+  @SubListDecorator(ItemSublist)
+  accessor item: NSSubList<ItemSublist>;
 
   override recordType () { return record.Type.PURCHASE_ORDER }
 }
