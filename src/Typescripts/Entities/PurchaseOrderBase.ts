@@ -4,68 +4,68 @@
 import * as record from 'N/record'
 import { TransactionBase } from '../Core/DataAccess/TransactionBase'
 import {FieldTypeDecorator, Nullable, SubRecordDecorator} from "../Core/DataAccess/NSTypedRecord";
-import {AddressBase} from "../Core/DataAccess/AddressBase";
-// import { Sublist, SublistFieldType, SublistLine } from '../Core/DataAccess/Sublist'
-// import { AddressBase } from '../Core/DataAccess/AddressBase'
+import { NSSubList, SubListFieldTypeDecorator} from '../Core/DataAccess/NSSubList'
+import { AddressBase } from '../Core/DataAccess/AddressBase'
+import {NSSubListLine} from "../Core/DataAccess/NSSubListLine";
 
 /**
  * Sublist 'item' on purchase orders
  */
-// export class ItemSublist extends SublistLine {
-//
-//   @SublistFieldType.decimalnumber
-//   amount: number
-//
-//   @SublistFieldType.select
-//   class: number
-//
-//   @SublistFieldType.select
-//   customer: number
-//
-//   @SublistFieldType.checkbox
-//   deferrevrec: boolean
-//
-//   @SublistFieldType.select
-//   department: number
-//
-//   @SublistFieldType.textarea
-//   description: string
-//
-//   @SublistFieldType.date
-//   expectedreceiptdate: Date
-//
-//   @SublistFieldType.checkbox
-//   isclosed: boolean
-//
-//   @SublistFieldType.select
-//   item: number
-//
-//   @SublistFieldType.select
-//   location: Nullable<number>
-//
-//   @SublistFieldType.integernumber
-//   leadtime: Nullable<number>
-//
-//   @SublistFieldType.float
-//   quantity: number
-//
-//   @SublistFieldType.float
-//   quantityreceived: number
-//
-//   @SublistFieldType.float
-//   quantitybilled: number
-//
-//   @SublistFieldType.decimalnumber
-//   rate: number
-//
-//   @SublistFieldType.select
-//   units: number
-//
-//   // This is documented as `text` in the records browser
-//   // but shows up as what appears to be vendor internal id on records.
-//   @SublistFieldType.freeformtext
-//   vendorname: string | number
-// }
+export class ItemSublist extends NSSubListLine {
+
+  @SubListFieldTypeDecorator()
+  accessor amount: number
+
+  @SubListFieldTypeDecorator()
+  accessor class: number
+
+  @SubListFieldTypeDecorator()
+  accessor customer: number
+
+  @SubListFieldTypeDecorator()
+  accessor deferrevrec: boolean
+
+  @SubListFieldTypeDecorator()
+  accessor department: number
+
+  @SubListFieldTypeDecorator()
+  accessor description: string
+
+  @SubListFieldTypeDecorator()
+  accessor expectedreceiptdate: Date
+
+  @SubListFieldTypeDecorator()
+  accessor isclosed: boolean
+
+  @SubListFieldTypeDecorator()
+  accessor item: number
+
+  @SubListFieldTypeDecorator()
+  accessor location: Nullable<number>
+
+  @SubListFieldTypeDecorator()
+  accessor leadtime: Nullable<number>
+
+  @SubListFieldTypeDecorator()
+  accessor quantity: number
+
+  @SubListFieldTypeDecorator()
+  accessor quantityreceived: number
+
+  @SubListFieldTypeDecorator()
+  accessor quantitybilled: number
+
+  @SubListFieldTypeDecorator()
+  accessor rate: number
+
+  @SubListFieldTypeDecorator()
+  accessor units: number
+
+  // This is documented as `text` in the records browser
+  // but shows up as what appears to be vendor internal id on records.
+  @SubListFieldTypeDecorator()
+  accessor vendorname: string | number
+}
 
 /**
  * NetSuite purchase order record
@@ -111,8 +111,8 @@ export class PurchaseOrderBase extends TransactionBase {
   @SubRecordDecorator(AddressBase)
   accessor billingaddress: AddressBase
 
-  // @FieldType.subrecord(AddressBase)
-  // shippingaddress: AddressBase
+  @SubRecordDecorator(AddressBase)
+  accessor shippingaddress: AddressBase
 
   @FieldTypeDecorator()
   accessor terms: Nullable<number>
@@ -133,7 +133,7 @@ export class PurchaseOrderBase extends TransactionBase {
   accessor unbilledorders: Nullable<number>
 
   //@FieldType.sublist(ItemSublist)
-  //item: Sublist<ItemSublist>
+  item: NSSubList<ItemSublist>
 
   override recordType () { return record.Type.PURCHASE_ORDER }
 }
