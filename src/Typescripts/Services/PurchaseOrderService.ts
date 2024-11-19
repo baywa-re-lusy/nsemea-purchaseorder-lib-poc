@@ -4,6 +4,11 @@ import {PurchaseOrderItemSublist} from "../Entities/PurchaseOrderItemSublist";
 
 export class PurchaseOrderService {
 
+  /**
+   * Set on all item lines the project column with the value defined on
+   * the transaction body project field.
+   * @param po Purchase order instance representing the related transaction
+   */
   setProjectOnItemLine (po: PurchaseOrder) {
 
     log.debug('PurchaseOrderService : setProjectOnItemLine', `Project: ${po.custbody_related_project}`);
@@ -16,11 +21,6 @@ export class PurchaseOrderService {
       item.custcol_related_project = project;
     });
 
-    Object.entries(po.item).forEach(([key, item], index) => {
-      log.debug('PurchaseOrderService : setProjectOnItemLine', `Key: ${key}`);
-      log.debug('PurchaseOrderService : setProjectOnItemLine', `Item: ${item}`);
-      log.debug('PurchaseOrderService : setProjectOnItemLine', `before: ${item.custcol_related_project} -> after: ${project}`)
-    });
   }
 
 }
