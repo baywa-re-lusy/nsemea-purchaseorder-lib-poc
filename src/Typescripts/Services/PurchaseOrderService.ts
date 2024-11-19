@@ -1,6 +1,5 @@
 import {PurchaseOrder} from "../Entities/PurchaseOrder";
 import * as log from 'N/log';
-import {PurchaseOrderItemSublist} from "../Entities/PurchaseOrderItemSublist";
 
 export class PurchaseOrderService {
 
