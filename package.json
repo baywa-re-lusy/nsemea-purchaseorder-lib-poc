@@ -1,6 +1,6 @@
 {
   "name": "nsemea-purchaseorder-lib-poc",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "NSEMEA purchase order library",
   "main": "none",
   "author": "Dario Da Silva",

@@ -18,7 +18,9 @@ export class PurchaseOrderService {
       po.item[i].custcol_related_project = project;
     }
 
-    // Object.entries(po.item).map(([key, item], index) => {
+    Object.entries(po.item).map(([key, item], index) => {
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Key: ${key}`);
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Item: ${item}`);
     //
     //   if (item instanceof PurchaseOrderItemSublist) {
     //     log.debug('PurchaseOrderService : setProjectOnItemLine', `Type of item: ${typeof item}`);
@@ -29,7 +31,7 @@ export class PurchaseOrderService {
     //     log.debug('PurchaseOrderService : setProjectOnItemLine', `before: ${item.custcol_related_project} -> after: ${project}`);
     //     item.custcol_related_project = project;
     //   }
-    // });
+    });
   }
 
 }
