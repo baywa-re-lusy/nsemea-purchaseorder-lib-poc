@@ -9,7 +9,10 @@ export class PurchaseOrderService {
     const project = po.custbody_related_project;
 
     Object.entries(po.item).map(([key, item], index) => {
-      log.debug('PurchaseOrderService : setProjectOnItemLine', `Line: ${index}`);
+
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Index: ${index}`);
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Key: ${key}`);
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Item: ${item}`);
       log.debug('PurchaseOrderService : setProjectOnItemLine', `before: ${item.custcol_related_project} -> after: ${project}`);
       item.custcol_related_project = project;
     });
