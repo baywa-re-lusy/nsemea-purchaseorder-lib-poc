@@ -1,6 +1,6 @@
 {
   "name": "nsemea-purchaseorder-lib-poc",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "NSEMEA purchase order library",
   "main": "none",
   "author": "Dario Da Silva",
@@ -14,9 +14,7 @@
     "@eslint/js": "^9.12.0",
     "@hitc/netsuite-types": "^2024.2.4",
     "@types/eslint__js": "^8.42.3",
-    "@types/lodash": "^4.17.13",
     "eslint": "^9.12.0",
-    "lodash": "^4.17.21",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.10.0"

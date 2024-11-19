@@ -1,5 +1,4 @@
 import {PurchaseOrder} from "../Entities/PurchaseOrder";
-import * as _ from 'lodash';
 import * as log from 'N/log';
 
 export class PurchaseOrderService {
@@ -9,8 +8,9 @@ export class PurchaseOrderService {
     log.debug('PurchaseOrderService : setProjectOnItemLine', `Project: ${po.custbody_related_project}`);
     const project = po.custbody_related_project;
 
-    _.map(po.item, (item) => {
-      log.debug('PurchaseOrderService : setProjectOnItemLine', `Line Project from: ${item.custcol_related_project} to ${project}`);
+    Object.entries(po.item).map(([key, item], index) => {
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Line: ${index}`);
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `before: ${item.custcol_related_project} -> after: ${project}`);
       item.custcol_related_project = project;
     });
   }
