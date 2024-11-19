@@ -8,8 +8,11 @@ export class PurchaseOrderService {
     log.debug('PurchaseOrderService : setProjectOnItemLine', `Project: ${po.custbody_related_project}`);
     const project = po.custbody_related_project;
 
+
+
     Object.entries(po.item).map(([key, item], index) => {
 
+      log.debug('PurchaseOrderService : setProjectOnItemLine', `Type of item: ${typeof item}`);
       log.debug('PurchaseOrderService : setProjectOnItemLine', `Index: ${index}`);
       log.debug('PurchaseOrderService : setProjectOnItemLine', `Key: ${key}`);
       log.debug('PurchaseOrderService : setProjectOnItemLine', `Item: ${item}`);
