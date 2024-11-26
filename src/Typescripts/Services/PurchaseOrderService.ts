@@ -22,4 +22,16 @@ export class PurchaseOrderService {
 
   }
 
+  setProjectOnCurrentItemLine (po: PurchaseOrder) {
+
+    log.debug('PurchaseOrderService : setProjectOnCurrentItemLine', `Project: ${po.custbody_related_project}`);
+    log.debug('PurchaseOrderService : getCurrentSublistIndex', `Project: ${po.item.getCurrentSublistIndex()}`);
+    const currIndex = po.item.getCurrentSublistIndex();
+    const project = po.custbody_related_project;
+    if (currIndex) {
+      po.item[currIndex].custcol_related_project = project;
+    }
+
+  }
+
 }
