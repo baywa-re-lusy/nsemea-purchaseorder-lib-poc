@@ -11,3 +11,4 @@ src/Typescripts/Entities/Address.ts
 src/Typescripts/Entities/AddressService.ts
 src/Typescripts/Entities
 src/Typescripts/Services
+src/Typescripts/nsemea_lib

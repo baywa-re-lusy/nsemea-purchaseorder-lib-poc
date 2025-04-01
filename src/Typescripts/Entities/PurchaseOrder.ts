@@ -2,9 +2,9 @@ import { PurchaseOrderBase } from './PurchaseOrderBase';
 import {
   FieldTypeDecorator,
   SubListDecorator,
-} from '../Core/DataAccess/NSTypedRecord';
+} from '@nsemea_lib/Core/DataAccess/NSTypedRecord';
 
-import { NSSubList } from '../Core/DataAccess/NSSubList';
+import { NSSubList } from '@nsemea_lib/Core/DataAccess/NSSubList';
 import { PurchaseOrderItemSublist } from './PurchaseOrderItemSublist';
 
 export class PurchaseOrder extends PurchaseOrderBase {

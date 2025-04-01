@@ -1,5 +1,5 @@
 import { ItemSublist } from './PurchaseOrderBase';
-import { SubListFieldTypeDecorator } from '../Core/DataAccess/NSSubList';
+import { SubListFieldTypeDecorator } from '@nsemea_lib/Core/DataAccess/NSSubList';
 
 export class PurchaseOrderItemSublist extends ItemSublist {
   @SubListFieldTypeDecorator()

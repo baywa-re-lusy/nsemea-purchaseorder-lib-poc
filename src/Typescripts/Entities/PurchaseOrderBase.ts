@@ -2,19 +2,19 @@
  * NetSuite purchase order record
  */
 import * as record from 'N/record';
-import { TransactionBase } from '../Core/DataAccess/TransactionBase';
+import { TransactionBase } from '@nsemea_lib/Core/DataAccess/TransactionBase';
 import {
   FieldTypeDecorator,
   Nullable,
   SubListDecorator,
   SubRecordDecorator,
-} from '../Core/DataAccess/NSTypedRecord';
+} from '@nsemea_lib/Core/DataAccess/NSTypedRecord';
 import {
   NSSubList,
   SubListFieldTypeDecorator,
-} from '../Core/DataAccess/NSSubList';
-import { Address } from './Address';
-import { NSSubListLine } from '../Core/DataAccess/NSSubListLine';
+} from '@nsemea_lib/Core/DataAccess/NSSubList';
+import { Address } from '@nsemea_lib/Entities/Address';
+import { NSSubListLine } from '@nsemea_lib/Core/DataAccess/NSSubListLine';
 
 /**
  * Sublist 'item' on purchase orders
